@@ -12,7 +12,7 @@ builder.Services.AddControllers()
     });
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGenNewtonsoftSupport();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
