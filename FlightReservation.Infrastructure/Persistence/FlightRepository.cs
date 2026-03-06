@@ -15,7 +15,7 @@ public class FlightRepository : IFlightRepository
     public async Task<IEnumerable<Flight>> SearchFlightsAsync(string destination, DateTime date)
     {
         await Task.Delay(100);
-        return _flights.Where(f => f.Destination.ToLower().Contains(destination.ToLower()) && f.DepartureDate.Date == date.Date);
+        return _flights.Where(f => f.Destination.ToLower().Contains(destination.ToLower()));
     }
 
     public async Task<Flight?> GetByIdAsync(Guid id)
