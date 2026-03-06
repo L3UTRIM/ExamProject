@@ -9,7 +9,7 @@ builder.Services.AddControllers()
     .AddNewtonsoftJson();
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGenNewtonsoftSupport();
+builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IPatientRepository, PatientRepository>();
 builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
