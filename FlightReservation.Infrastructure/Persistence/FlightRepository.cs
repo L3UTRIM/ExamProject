@@ -15,12 +15,44 @@ public class FlightRepository : IFlightRepository
     public async Task<IEnumerable<Flight>> SearchFlightsAsync(string destination, DateTime date)
     {
         await Task.Delay(100);
-        return _flights.Where(f => f.Destination.ToLower().Contains(destination.ToLower()));
+        var dest = destination?.Trim() ?? string.Empty;
+        var targetDate = date.Date;
+
+        return _flights.Where(f =>
+            f.Destination.Contains(dest, StringComparison.OrdinalIgnoreCase) &&
+            f.DepartureDate.Date == targetDate);
     }
 
     public async Task<Flight?> GetByIdAsync(Guid id)
     {
         await Task.Delay(50);
         return _flights.FirstOrDefault(f => f.Id == id);
+    }
+
+    public async Task<bool> TryReserveSeatAsync(Guid flightId)
+    {
+        await Task.Delay(50);
+
+        lock (_flights)
+        {
+            var flight = _flights.FirstOrDefault(f => f.Id == flightId);
+            if (flight == null || flight.AvailableSeats <= 0)
+                return false;
+
+            flight.AvailableSeats -= 1;
+            return true;
+        }
+    }
+
+    public async Task ReleaseSeatAsync(Guid flightId)
+    {
+        await Task.Delay(50);
+
+        lock (_flights)
+        {
+            var flight = _flights.FirstOrDefault(f => f.Id == flightId);
+            if (flight != null)
+                flight.AvailableSeats += 1;
+        }
     }
 }

@@ -33,16 +33,23 @@ public class CreateReservationUseCase
         // Assign full flight data
         reservation.Flight = flight;
 
-        // TWO PROCESSES RUN SIMULTANEOUSLY
+        // TWO PROCESSES RUN SIMULTANEOUSLY: payment + seat reservation
         var paymentTask = _paymentService.ProcessPaymentAsync(reservation.Payment);
-        var seatTask = ReserveSeatAsync(flight.Id);
+        var seatTask = _flightRepository.TryReserveSeatAsync(flight.Id);
 
         await Task.WhenAll(paymentTask, seatTask);
 
         var paymentResult = await paymentTask;
+        var seatReserved = await seatTask;
         
+        if (!seatReserved)
+            throw new InvalidOperationException("No seats available");
+
         if (!paymentResult.Success)
+        {
+            await _flightRepository.ReleaseSeatAsync(flight.Id);
             throw new InvalidOperationException("Payment failed");
+        }
 
         reservation.Status = ReservationStatus.Confirmed;
         reservation.BookingDate = DateTime.UtcNow;
@@ -52,10 +59,5 @@ public class CreateReservationUseCase
         await _emailService.SendConfirmationEmailAsync(reservation);
 
         return reservation;
-    }
-
-    private async Task ReserveSeatAsync(Guid flightId)
-    {
-        await Task.Delay(100);
     }
 }
