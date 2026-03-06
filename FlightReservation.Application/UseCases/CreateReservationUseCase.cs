@@ -30,6 +30,9 @@ public class CreateReservationUseCase
         if (flight == null || flight.AvailableSeats <= 0)
             throw new InvalidOperationException("Flight not available");
 
+        // Assign full flight data
+        reservation.Flight = flight;
+
         // TWO PROCESSES RUN SIMULTANEOUSLY
         var paymentTask = _paymentService.ProcessPaymentAsync(reservation.Payment);
         var seatTask = ReserveSeatAsync(flight.Id);
