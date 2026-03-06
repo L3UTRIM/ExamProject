@@ -10,6 +10,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightReservation.Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightReservation.API", "FlightReservation.API\FlightReservation.API.csproj", "{7FDF302D-03E9-4CB7-AD29-02595DDEF024}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalNetwork.Domain", "HospitalNetwork.Domain\HospitalNetwork.Domain.csproj", "{A1B2C3D4-1234-5678-9ABC-DEF012345678}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalNetwork.Application", "HospitalNetwork.Application\HospitalNetwork.Application.csproj", "{A1B2C3D4-1234-5678-9ABC-DEF012345679}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalNetwork.CoreAPI", "HospitalNetwork.CoreAPI\HospitalNetwork.CoreAPI.csproj", "{A1B2C3D4-1234-5678-9ABC-DEF012345680}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverPattern", "ObserverPattern\ObserverPattern.csproj", "{B1C2D3E4-1234-5678-9ABC-DEF012345681}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategyPattern", "StrategyPattern\StrategyPattern.csproj", "{C2D3E4F5-1234-5678-9ABC-DEF012345682}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +42,26 @@ Global
 		{7FDF302D-03E9-4CB7-AD29-02595DDEF024}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FDF302D-03E9-4CB7-AD29-02595DDEF024}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FDF302D-03E9-4CB7-AD29-02595DDEF024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D4-1234-5678-9ABC-DEF012345678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-1234-5678-9ABC-DEF012345678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-1234-5678-9ABC-DEF012345678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-1234-5678-9ABC-DEF012345678}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D4-1234-5678-9ABC-DEF012345679}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-1234-5678-9ABC-DEF012345679}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-1234-5678-9ABC-DEF012345679}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-1234-5678-9ABC-DEF012345679}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D4-1234-5678-9ABC-DEF012345680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-1234-5678-9ABC-DEF012345680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-1234-5678-9ABC-DEF012345680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-1234-5678-9ABC-DEF012345680}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1C2D3E4-1234-5678-9ABC-DEF012345681}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1C2D3E4-1234-5678-9ABC-DEF012345681}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1C2D3E4-1234-5678-9ABC-DEF012345681}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1C2D3E4-1234-5678-9ABC-DEF012345681}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2D3E4F5-1234-5678-9ABC-DEF012345682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2D3E4F5-1234-5678-9ABC-DEF012345682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2D3E4F5-1234-5678-9ABC-DEF012345682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2D3E4F5-1234-5678-9ABC-DEF012345682}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
